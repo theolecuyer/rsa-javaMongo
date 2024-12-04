@@ -19,7 +19,7 @@ import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
 
 public class mongoHelper {
-	String connectionString = "REMOVED";
+	String connectionString = "mongodb+srv://adminTestUser:test1234@encryptiondb.mln1zt9.mongodb.net/?retryWrites=true&w=majority";
     ServerApi serverApi = ServerApi.builder()
             .version(ServerApiVersion.V1)
             .build();

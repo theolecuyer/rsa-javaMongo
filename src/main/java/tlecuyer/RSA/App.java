@@ -26,7 +26,10 @@ import org.bson.Document;
 public class App {
     public static void main(String[] args) {
     	//Connect to mongoDB as the test user
-        String connectionString = "REMOVED";
+        String connectionString = System.getenv("MONGO_CONNECTION_STRING");
+	if (connectionString == null || connectionString.isEmpty()) {
+    		throw new IllegalArgumentException("Connection string is not set in environment variables.");
+	}
         ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)
                 .build();
